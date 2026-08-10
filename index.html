@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MixHub</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: white;
+    }
+
+    header {
+      background: linear-gradient(135deg, #7b2cff, #ff2d75);
+      padding: 45px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 42px;
+      margin: 0 0 10px;
+    }
+
+    header p {
+      margin: 0 0 25px;
+      font-size: 18px;
+    }
+
+    .search {
+      width: 90%;
+      max-width: 600px;
+      padding: 15px;
+      border: none;
+      border-radius: 30px;
+      font-size: 16px;
+      outline: none;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    .mix {
+      background: #1d1d1d;
+      border-radius: 15px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .mix h2 {
+      margin-top: 0;
+    }
+
+    .mix p {
+      color: #bbb;
+    }
+
+    audio {
+      width: 100%;
+      margin: 15px 0;
+    }
+
+    .download {
+      display: inline-block;
+      background: #7b2cff;
+      color: white;
+      text-decoration: none;
+      padding: 12px 20px;
+      border-radius: 25px;
+    }
+
+    .download:hover {
+      background: #ff2d75;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #777;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>🎧 MIXHUB</h1>
+    <p>Listen, discover and download mixes</p>
+
+    <input
+      class="search"
+      type="text"
+      id="search"
+      placeholder="🔍 Search for a mix..."
+      onkeyup="searchMixes()"
+    >
+  </header>
+
+  <main id="mixList">
+
+    <div class="mix">
+      <h2>🔥 Afro House Mix</h2>
+      <p>DJ Mix • 2026</p>
+
+      <audio controls>
+        <source src="" type="audio/mpeg">
+      </audio>
+
+      <a class="download" href="#" download>
+        ⬇ Download Mix
+      </a>
+    </div>
+
+    <div class="mix">
+      <h2>🎶 Amapiano Mix</h2>
+      <p>DJ Mix • 2026</p>
+
+      <audio controls>
+        <source src="" type="audio/mpeg">
+      </audio>
+
+      <a class="download" href="#" download>
+        ⬇ Download Mix
+      </a>
+    </div>
+
+    <div class="mix">
+      <h2>🌙 Deep House Mix</h2>
+      <p>DJ Mix • 2026</p>
+
+      <audio controls>
+        <source src="" type="audio/mpeg">
+      </audio>
+
+      <a class="download" href="#" download>
+        ⬇ Download Mix
+      </a>
+    </div>
+
+  </main>
+
+  <footer>
+    © 2026 MixHub
+  </footer>
+
+  <script>
+    function searchMixes() {
+      let input = document.getElementById("search").value.toLowerCase();
+      let mixes = document.querySelectorAll(".mix");
+
+      mixes.forEach(function(mix) {
+        let title = mix.innerText.toLowerCase();
+
+        if (title.includes(input)) {
+          mix.style.display = "block";
+        } else {
+          mix.style.display = "none";
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>
